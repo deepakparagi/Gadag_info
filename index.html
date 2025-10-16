@@ -10,16 +10,30 @@
     <meta name="keywords" content="Gadag, Gadag Info, Karnataka, Gadag Tourism, Gadag News, Gadag Events, Namma Gadag">
     <meta name="author" content="Gadag Info">
     
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.instagram.com/gadag_info/">
+    <meta property="og:title" content="Gadag Info - The Land of Heritage & Culture">
+    <meta property="og:description" content="Embrace the heritage, culture, and beauty of Gadag. Stay connected for the latest updates, events, and stories.">
+    <meta property="og:image" content="https://placehold.co/1200x630/0a0a0a/ffffff?text=Gadag+Info">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.instagram.com/gadag_info/">
+    <meta name="twitter:title" content="Gadag Info - The Land of Heritage & Culture">
+    <meta name="twitter:description" content="Embrace the heritage, culture, and beauty of Gadag. Stay connected for the latest updates, events, and stories.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/0a0a0a/ffffff?text=Gadag+Info">
+
     <!-- Favicon -->
-    <link rel="icon" href="https://img.icons8.com/ios-filled/50/ffffff/information.png" type="image/png">
+    <link rel="icon" href="Images/Gadag_info_logo.jpg" type="image/png">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Righteous&display=swap" rel="stylesheet">
     
     <!-- Custom CSS for animations and styling -->
     <style>
@@ -27,6 +41,10 @@
             font-family: 'Inter', sans-serif;
             background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
             color: #e5e5e5;
+        }
+        
+        .font-brand {
+            font-family: 'Righteous', cursive;
         }
 
         /* Custom scrollbar */
@@ -59,18 +77,18 @@
             transform: translateY(0);
         }
         
-        /* Honeypot field */
+        /* Honeypot field for anti-spam */
         .honeypot {
             position: absolute;
             left: -5000px;
             visibility: hidden;
         }
 
-        /* Interactive Button Style from uiverse.io */
+        /* Interactive Button Style */
         .btn-interactive {
             position: relative;
             overflow: hidden;
-            transition: color 0.5s ease-in-out;
+            transition: color 0.5s ease-in-out, transform 0.2s ease, box-shadow 0.2s ease;
             z-index: 1;
         }
         .btn-interactive::before {
@@ -111,14 +129,28 @@
             border-color: #a7a7a7;
             box-shadow: 0 0 10px rgba(167, 167, 167, 0.4);
         }
+
+        /* Accessibility: Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .fade-in, .btn-interactive, .card-tilt, img {
+                transition: none !important;
+                animation: none !important;
+            }
+            .btn-interactive:hover {
+                transform: none;
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold tracking-wider text-white">GADAG INFO</a>
+        <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center" aria-label="Main Navigation">
+            <a href="#" class="flex items-center text-2xl font-bold tracking-wider text-white">
+                <img src="Images/Gadag_info_logo.jpg" alt="Gadag Info Logo" class="h-9 w-9 mr-3 rounded-full">
+                <span class="font-brand">GADAG INFO</span>
+            </a>
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300">About</a>
                 <a href="#gallery" class="text-gray-300 hover:text-white transition-colors duration-300">Gallery</a>
@@ -132,11 +164,11 @@
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+        <section id="home" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
             <div class="absolute inset-0 z-0">
                 <img src="https://placehold.co/1920x1080/000000/FFFFFF?text=Gadag+Scenery" 
-                     onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/000000/FFFFFF?text=Gadag+Scenery';"
-                     alt="Historic Temple of Gadag" 
+                     onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/000000/FFFFFF?text=Error';"
+                     alt="A serene, wide-angle view of a historic temple in Gadag at dusk, showcasing intricate architecture." 
                      class="w-full h-full object-cover brightness-50">
             </div>
             <div class="absolute inset-0 z-10 hero-gradient"></div>
@@ -149,33 +181,33 @@
 
         <!-- About / Highlights Section -->
         <section id="about" class="py-20 md:py-32">
-            <div class="container mx-auto px-6">
+            <div class="container mx-auto px-4 sm:px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-white fade-in">Our City's Highlights</h2>
-                    <p class="text-gray-400 mt-2 max-w-2xl mx-auto fade-in" style="transition-delay: 150ms;">Discover the vibrant facets of Gadag that make it unique.</p>
+                    <p class="text-gray-300 mt-2 max-w-2xl mx-auto fade-in" style="transition-delay: 150ms;">Discover the vibrant facets of Gadag that make it unique.</p>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                     <!-- Highlight Card: Places -->
                     <div class="card-tilt group relative rounded-xl overflow-hidden cursor-pointer fade-in" style="transition-delay: 200ms;">
-                        <img src="https://placehold.co/600x800/1a1a1a/ffffff?text=Iconic+Place" alt="Iconic Places in Gadag" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <img src="https://placehold.co/600x800/1a1a1a/ffffff?text=Iconic+Place" loading="lazy" alt="A collage of iconic landmarks and beautiful places in Gadag." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                         <h3 class="absolute bottom-6 left-6 text-2xl font-bold text-white">Places</h3>
                     </div>
                     <!-- Highlight Card: Temples -->
                     <div class="card-tilt group relative rounded-xl overflow-hidden cursor-pointer fade-in" style="transition-delay: 300ms;">
-                        <img src="https://placehold.co/600x800/1a1a1a/ffffff?text=Temple" alt="Historic Temples of Gadag" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <img src="https://placehold.co/600x800/1a1a1a/ffffff?text=Temple" loading="lazy" alt="The intricately carved stone facade of a historic temple in Gadag." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                         <h3 class="absolute bottom-6 left-6 text-2xl font-bold text-white">Temples</h3>
                     </div>
                     <!-- Highlight Card: Food -->
                     <div class="card-tilt group relative rounded-xl overflow-hidden cursor-pointer fade-in" style="transition-delay: 400ms;">
-                        <img src="https://placehold.co/600x800/1a1a1a/ffffff?text=Local+Food" alt="Local Cuisine of Gadag" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <img src="https://placehold.co/600x800/1a1a1a/ffffff?text=Local+Food" loading="lazy" alt="A delicious spread of local Gadag cuisine, featuring Jolada Rotti." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                         <h3 class="absolute bottom-6 left-6 text-2xl font-bold text-white">Food</h3>
                     </div>
                     <!-- Highlight Card: History -->
                     <div class="card-tilt group relative rounded-xl overflow-hidden cursor-pointer fade-in" style="transition-delay: 500ms;">
-                        <img src="https://placehold.co/600x800/1a1a1a/ffffff?text=History" alt="History of Gadag" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <img src="https://placehold.co/600x800/1a1a1a/ffffff?text=History" loading="lazy" alt="Ancient stone inscriptions and artifacts representing the rich history of Gadag." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                         <h3 class="absolute bottom-6 left-6 text-2xl font-bold text-white">History</h3>
                     </div>
@@ -185,84 +217,96 @@
 
         <!-- Gallery Section -->
         <section id="gallery" class="py-20 md:py-32 bg-[#111]">
-            <div class="container mx-auto px-6">
+            <div class="container mx-auto px-4 sm:px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-white fade-in">From Our Gallery</h2>
-                    <p class="text-gray-400 mt-2 max-w-2xl mx-auto fade-in" style="transition-delay: 150ms;">A glimpse into the life and soul of Gadag, shared with our community.</p>
+                    <p class="text-gray-300 mt-2 max-w-2xl mx-auto fade-in" style="transition-delay: 150ms;">A glimpse into the life and soul of Gadag, shared with our community.</p>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     <!-- Gallery Items -->
-                    <a href="https://www.instagram.com/" target="_blank" class="group block rounded-xl overflow-hidden relative fade-in" style="transition-delay: 200ms;">
-                        <img src="https://placehold.co/800x800/1a1a1a/ffffff?text=Post+1" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="Gadag Gallery Image 1">
-                        <div class="absolute inset-0 bg-black/60 flex items-center justify-center p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
-                            <p class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">Trikuteshwara Temple Complex, a masterpiece of Chalukyan architecture. #Gadag #History</p>
-                        </div>
-                    </a>
-                    <a href="https://www.instagram.com/" target="_blank" class="group block rounded-xl overflow-hidden relative fade-in" style="transition-delay: 300ms;">
-                        <img src="https://placehold.co/800x800/1a1a1a/ffffff?text=Post+2" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="Gadag Gallery Image 2">
-                         <div class="absolute inset-0 bg-black/60 flex items-center justify-center p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
-                           <p class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">Vibrant sunset over Magadi Bird Sanctuary. #Nature #Gadag</p>
-                        </div>
-                    </a>
-                    <a href="https://www.instagram.com/" target="_blank" class="group block rounded-xl overflow-hidden relative fade-in" style="transition-delay: 400ms;">
-                        <img src="https://placehold.co/800x800/1a1a1a/ffffff?text=Post+3" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="Gadag Gallery Image 3">
-                        <div class="absolute inset-0 bg-black/60 flex items-center justify-center p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
-                           <p class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">The rhythmic process of Gajendragad weaving. #Culture #Handloom</p>
-                        </div>
-                    </a>
-                     <a href="https://www.instagram.com/" target="_blank" class="group block rounded-xl overflow-hidden relative fade-in" style="transition-delay: 500ms;">
-                        <img src="https://placehold.co/800x800/1a1a1a/ffffff?text=Post+4" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="Gadag Gallery Image 4">
-                        <div class="absolute inset-0 bg-black/60 flex items-center justify-center p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
-                           <p class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">Savouring the authentic Jolada Rotti Oota. #Food #GadagCuisine</p>
-                        </div>
-                    </a>
-                     <a href="https://www.instagram.com/" target="_blank" class="group block rounded-xl overflow-hidden relative fade-in" style="transition-delay: 600ms;">
-                        <img src="https://placehold.co/800x800/1a1a1a/ffffff?text=Post+5" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="Gadag Gallery Image 5">
-                        <div class="absolute inset-0 bg-black/60 flex items-center justify-center p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
-                           <p class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">Veeranarayana Temple, an inspiration for poets. #Heritage</p>
-                        </div>
-                    </a>
-                     <a href="https://www.instagram.com/" target="_blank" class="group block rounded-xl overflow-hidden relative fade-in" style="transition-delay: 700ms;">
-                        <img src="https://placehold.co/800x800/1a1a1a/ffffff?text=Post+6" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="Gadag Gallery Image 6">
-                        <div class="absolute inset-0 bg-black/60 flex items-center justify-center p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
-                            <p class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">The festive spirit during a local Jathre. #Events #Community</p>
-                        </div>
-                    </a>
+                    <article class="fade-in" style="transition-delay: 200ms;">
+                        <a href="https://www.instagram.com/gadag_info/" target="_blank" class="group block rounded-xl overflow-hidden relative">
+                            <img src="https://placehold.co/800x800/1a1a1a/ffffff?text=Post+1" loading="lazy" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="Trikuteshwara Temple Complex, a masterpiece of Chalukyan architecture.">
+                            <div class="absolute inset-0 bg-black/60 flex items-center justify-center p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
+                                <p class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">Trikuteshwara Temple Complex, a masterpiece of Chalukyan architecture. #Gadag #History</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="fade-in" style="transition-delay: 300ms;">
+                        <a href="https://www.instagram.com/gadag_info/" target="_blank" class="group block rounded-xl overflow-hidden relative">
+                            <img src="https://placehold.co/800x800/1a1a1a/ffffff?text=Post+2" loading="lazy" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="Vibrant sunset over Magadi Bird Sanctuary.">
+                             <div class="absolute inset-0 bg-black/60 flex items-center justify-center p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
+                               <p class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">Vibrant sunset over Magadi Bird Sanctuary. #Nature #Gadag</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="fade-in" style="transition-delay: 400ms;">
+                        <a href="https://www.instagram.com/gadag_info/" target="_blank" class="group block rounded-xl overflow-hidden relative">
+                            <img src="https://placehold.co/800x800/1a1a1a/ffffff?text=Post+3" loading="lazy" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="The rhythmic process of Gajendragad weaving.">
+                            <div class="absolute inset-0 bg-black/60 flex items-center justify-center p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
+                               <p class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">The rhythmic process of Gajendragad weaving. #Culture #Handloom</p>
+                            </div>
+                        </a>
+                    </article>
+                     <article class="fade-in" style="transition-delay: 500ms;">
+                        <a href="https://www.instagram.com/gadag_info/" target="_blank" class="group block rounded-xl overflow-hidden relative">
+                            <img src="https://placehold.co/800x800/1a1a1a/ffffff?text=Post+4" loading="lazy" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="Savouring the authentic Jolada Rotti Oota.">
+                            <div class="absolute inset-0 bg-black/60 flex items-center justify-center p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
+                               <p class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">Savouring the authentic Jolada Rotti Oota. #Food #GadagCuisine</p>
+                            </div>
+                        </a>
+                    </article>
+                     <article class="fade-in" style="transition-delay: 600ms;">
+                        <a href="https://www.instagram.com/gadag_info/" target="_blank" class="group block rounded-xl overflow-hidden relative">
+                            <img src="https://placehold.co/800x800/1a1a1a/ffffff?text=Post+5" loading="lazy" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="Veeranarayana Temple, an inspiration for poets.">
+                            <div class="absolute inset-0 bg-black/60 flex items-center justify-center p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
+                               <p class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">Veeranarayana Temple, an inspiration for poets. #Heritage</p>
+                            </div>
+                        </a>
+                    </article>
+                     <article class="fade-in" style="transition-delay: 700ms;">
+                        <a href="https://www.instagram.com/gadag_info/" target="_blank" class="group block rounded-xl overflow-hidden relative">
+                            <img src="https://placehold.co/800x800/1a1a1a/ffffff?text=Post+6" loading="lazy" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="The festive spirit during a local Jathre.">
+                            <div class="absolute inset-0 bg-black/60 flex items-center justify-center p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
+                                <p class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">The festive spirit during a local Jathre. #Events #Community</p>
+                            </div>
+                        </a>
+                    </article>
                 </div>
             </div>
         </section>
         
         <!-- Reels Section -->
         <section id="reels" class="py-20 md:py-32">
-            <div class="container mx-auto px-6">
+            <div class="container mx-auto px-4 sm:px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-white fade-in">Trending Reels</h2>
-                    <p class="text-gray-400 mt-2 max-w-2xl mx-auto fade-in" style="transition-delay: 150ms;">Dynamic stories and moments from Gadag, captured in motion.</p>
+                    <p class="text-gray-300 mt-2 max-w-2xl mx-auto fade-in" style="transition-delay: 150ms;">Dynamic stories and moments from Gadag, captured in motion.</p>
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
                     <!-- Reel Items -->
-                    <a href="https://www.instagram.com/reels/" target="_blank" class="group relative rounded-xl overflow-hidden fade-in" style="transition-delay: 200ms;">
-                         <img src="https://placehold.co/400x700/1a1a1a/ffffff?text=Reel+1" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="Gadag Reel 1">
+                    <a href="https://www.instagram.com/gadag_info/" target="_blank" class="group relative rounded-xl overflow-hidden fade-in" style="transition-delay: 200ms;">
+                         <img src="https://placehold.co/400x700/1a1a1a/ffffff?text=Reel+1" loading="lazy" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="A short video reel showcasing a beautiful temple in Gadag.">
                         <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                             <svg class="w-16 h-16 text-white transform scale-0 group-hover:scale-100 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                             <svg class="w-16 h-16 text-white transform scale-0 group-hover:scale-100 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
                         </div>
                     </a>
-                     <a href="https://www.instagram.com/reels/" target="_blank" class="group relative rounded-xl overflow-hidden fade-in" style="transition-delay: 300ms;">
-                         <img src="https://placehold.co/400x700/1a1a1a/ffffff?text=Reel+2" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="Gadag Reel 2">
+                     <a href="https://www.instagram.com/gadag_info/" target="_blank" class="group relative rounded-xl overflow-hidden fade-in" style="transition-delay: 300ms;">
+                         <img src="https://placehold.co/400x700/1a1a1a/ffffff?text=Reel+2" loading="lazy" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="A dynamic video reel of local food being prepared in Gadag.">
                         <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                             <svg class="w-16 h-16 text-white transform scale-0 group-hover:scale-100 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                             <svg class="w-16 h-16 text-white transform scale-0 group-hover:scale-100 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
                         </div>
                     </a>
-                     <a href="https://www.instagram.com/reels/" target="_blank" class="group relative rounded-xl overflow-hidden fade-in" style="transition-delay: 400ms;">
-                         <img src="https://placehold.co/400x700/1a1a1a/ffffff?text=Reel+3" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="Gadag Reel 3">
+                     <a href="https://www.instagram.com/gadag_info/" target="_blank" class="group relative rounded-xl overflow-hidden fade-in" style="transition-delay: 400ms;">
+                         <img src="https://placehold.co/400x700/1a1a1a/ffffff?text=Reel+3" loading="lazy" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="A fast-paced video reel highlighting the historical sites of Gadag.">
                         <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                             <svg class="w-16 h-16 text-white transform scale-0 group-hover:scale-100 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                             <svg class="w-16 h-16 text-white transform scale-0 group-hover:scale-100 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
                         </div>
                     </a>
-                     <a href="https://www.instagram.com/reels/" target="_blank" class="group relative rounded-xl overflow-hidden fade-in" style="transition-delay: 500ms;">
-                         <img src="https://placehold.co/400x700/1a1a1a/ffffff?text=Reel+4" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="Gadag Reel 4">
+                     <a href="https://www.instagram.com/gadag_info/" target="_blank" class="group relative rounded-xl overflow-hidden fade-in" style="transition-delay: 500ms;">
+                         <img src="https://placehold.co/400x700/1a1a1a/ffffff?text=Reel+4" loading="lazy" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110" alt="A captivating video reel showing the natural beauty around Gadag.">
                         <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                             <svg class="w-16 h-16 text-white transform scale-0 group-hover:scale-100 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                             <svg class="w-16 h-16 text-white transform scale-0 group-hover:scale-100 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
                         </div>
                     </a>
                 </div>
@@ -271,10 +315,10 @@
 
         <!-- Contact / Paid Promotion Section -->
         <section id="contact" class="py-20 md:py-32 bg-[#111]">
-            <div class="container mx-auto px-6">
+            <div class="container mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-white fade-in">Request for Paid Promotion</h2>
-                    <p class="text-gray-400 mt-2 max-w-2xl mx-auto fade-in" style="transition-delay: 150ms;">Collaborate with us to reach a wider audience. Fill out the form below, and we'll get in touch.</p>
+                    <p class="text-gray-300 mt-2 max-w-2xl mx-auto fade-in" style="transition-delay: 150ms;">Collaborate with us to reach a wider audience. Fill out the form below, and we'll get in touch.</p>
                 </div>
                 
                 <div class="max-w-2xl mx-auto glassmorphism p-8 rounded-2xl fade-in" style="transition-delay: 200ms;">
@@ -285,25 +329,25 @@
                         </div>
                         <div class="mb-5">
                             <label for="name" class="block mb-2 text-sm font-medium text-gray-300">Name / Brand Name</label>
-                            <input type="text" id="name" name="name" class="interactive-input text-white text-sm rounded-lg block w-full p-3" placeholder="Your Brand Name" required>
-                            <p class="error-message mt-1 text-sm text-red-500 hidden">Please enter your name or brand name.</p>
+                            <input type="text" id="name" name="name" class="interactive-input text-white text-sm rounded-lg block w-full p-3" placeholder="Your Brand Name" required aria-describedby="name-error">
+                            <p id="name-error" class="error-message mt-1 text-sm text-red-500 hidden">Please enter your name or brand name.</p>
                         </div>
                         <div class="mb-5">
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-300">Contact Email</label>
-                            <input type="email" id="email" name="email" class="interactive-input text-white text-sm rounded-lg block w-full p-3" placeholder="you@company.com" required>
-                            <p class="error-message mt-1 text-sm text-red-500 hidden">Please enter a valid email address.</p>
+                            <input type="email" id="email" name="email" class="interactive-input text-white text-sm rounded-lg block w-full p-3" placeholder="you@company.com" required aria-describedby="email-error">
+                            <p id="email-error" class="error-message mt-1 text-sm text-red-500 hidden">Please enter a valid email address.</p>
                         </div>
                         <div class="mb-6">
                             <label for="message" class="block mb-2 text-sm font-medium text-gray-300">Message / Proposal</label>
-                            <textarea id="message" name="message" rows="4" class="interactive-input text-white text-sm rounded-lg block w-full p-3" placeholder="Describe your promotion request..." required></textarea>
-                            <p class="error-message mt-1 text-sm text-red-500 hidden">Please enter your message.</p>
+                            <textarea id="message" name="message" rows="4" class="interactive-input text-white text-sm rounded-lg block w-full p-3" placeholder="Describe your promotion request..." required aria-describedby="message-error"></textarea>
+                            <p id="message-error" class="error-message mt-1 text-sm text-red-500 hidden">Please enter your message.</p>
                         </div>
                         <button type="submit" class="w-full text-black bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-bold rounded-lg text-md px-5 py-3 text-center transition-all duration-300 btn-interactive">Send via WhatsApp</button>
                     </form>
                     
-                    <div id="form-feedback" class="mt-4 text-center"></div>
+                    <div id="form-feedback" class="mt-4 text-center" role="alert" aria-live="polite"></div>
 
-                    <div class="text-center mt-8 text-gray-400 text-sm">
+                    <div class="text-center mt-8 text-gray-300 text-sm">
                         <p>For other inquiries, you can reach us at:</p>
                         <a href="mailto:contact.gadaginfo@gmail.com" class="text-white font-semibold hover:underline">contact.gadaginfo@gmail.com</a>
                     </div>
@@ -314,16 +358,31 @@
 
     <!-- Footer -->
     <footer class="bg-black py-8">
-        <div class="container mx-auto px-6 text-center text-gray-400">
+        <div class="container mx-auto px-4 sm:px-6 text-center text-gray-400">
             <p>&copy; 2024 Gadag Info. All Rights Reserved.</p>
             <p class="mt-2">Connecting Gadag, One Post at a Time.</p>
-            <div class="flex justify-center mt-4">
-                <a href="https://www.instagram.com/gadag_info/" target="_blank" class="text-gray-400 hover:text-white transition-all duration-300 group">
-                     <svg class="w-8 h-8 transform group-hover:scale-125 group-hover:rotate-6 transition-transform" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.552 0-3.957.015-5.338.077-2.49.114-3.582 1.2-3.696 3.696-.062 1.38-.077 1.785-.077 5.338s.015 3.957.077 5.338c.114 2.49 1.2 3.582 3.696 3.696 1.38.062 1.785.077 5.338.077s3.957-.015 5.338-.077c2.49-.114 3.582-1.2 3.696-3.696.062-1.38.077-1.785.077-5.338s-.015-3.957-.077-5.338c-.114-2.49-1.2-3.582-3.696-3.696C15.957 3.98 15.552 3.965 12 3.965zM12 6.837c-2.846 0-5.163 2.317-5.163 5.163s2.317 5.163 5.163 5.163 5.163-2.317 5.163-5.163S14.846 6.837 12 6.837zm0 8.53c-1.857 0-3.363-1.507-3.363-3.363s1.507-3.363 3.363-3.363 3.363 1.507 3.363 3.363-1.506 3.363-3.363 3.363zm4.47-8.895c-.783 0-1.417.634-1.417 1.417s.634 1.417 1.417 1.417 1.417-.634 1.417-1.417-.634-1.417-1.417-1.417z"></path></svg>
+            <div class="flex justify-center items-center mt-6 space-x-6">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/gadag_info/" target="_blank" class="text-gray-400 hover:text-white transition-all duration-300 group" aria-label="Visit our Instagram page">
+                     <svg class="w-7 h-7 transform group-hover:scale-125 group-hover:rotate-6 transition-transform" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.552 0-3.957.015-5.338.077-2.49.114-3.582 1.2-3.696 3.696-.062 1.38-.077 1.785-.077 5.338s.015 3.957.077 5.338c.114 2.49 1.2 3.582 3.696 3.696 1.38.062 1.785.077 5.338.077s3.957-.015 5.338-.077c2.49-.114 3.582-1.2 3.696-3.696.062-1.38.077-1.785.077-5.338s-.015-3.957-.077-5.338c-.114-2.49-1.2-3.582-3.696-3.696C15.957 3.98 15.552 3.965 12 3.965zM12 6.837c-2.846 0-5.163 2.317-5.163 5.163s2.317 5.163 5.163 5.163 5.163-2.317 5.163-5.163S14.846 6.837 12 6.837zm0 8.53c-1.857 0-3.363-1.507-3.363-3.363s1.507-3.363 3.363-3.363 3.363 1.507 3.363 3.363-1.506 3.363-3.363 3.363zm4.47-8.895c-.783 0-1.417.634-1.417 1.417s.634 1.417 1.417 1.417 1.417-.634 1.417-1.417-.634-1.417-1.417-1.417z"></path></svg>
+                </a>
+                 <!-- Social Sharing Links -->
+                <a href="https://wa.me/?text=Check%20out%20this%20awesome%20page%20about%20Gadag!%20https://www.instagram.com/gadag_info/" target="_blank" class="text-gray-400 hover:text-white transition-all duration-300 group" aria-label="Share on WhatsApp">
+                    <svg class="w-7 h-7 transform group-hover:scale-125 transition-transform" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.456l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.267.655 4.398 1.919 6.166l-.36 1.325 1.35-1.325z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.instagram.com/gadag_info/" target="_blank" class="text-gray-400 hover:text-white transition-all duration-300 group" aria-label="Share on Facebook">
+                    <svg class="w-7 h-7 transform group-hover:scale-125 transition-transform" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
                 </a>
             </div>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" title="Go to top" class="hidden fixed bottom-5 right-5 z-50 bg-white/20 text-white backdrop-blur-md p-3 rounded-full transition-opacity duration-300 hover:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -336,7 +395,7 @@
 
             // --- Intersection Observer for fade-in animations ---
             const faders = document.querySelectorAll('.fade-in');
-            const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+            const appearOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
             const appearOnScroll = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -372,14 +431,14 @@
                 feedbackEl.innerHTML = '';
                 feedbackEl.className = 'mt-4 text-center';
 
-                if (document.getElementById('bot-field').value) return;
+                if (document.getElementById('bot-field').value) return; // Honeypot check
 
                 let isValid = true;
                 const fields = ['name', 'email', 'message'];
                 
                 fields.forEach(id => {
                     const input = document.getElementById(id);
-                    const errorEl = input.nextElementSibling;
+                    const errorEl = document.getElementById(`${id}-error`);
                     const isEmail = id === 'email';
                     const isInvalidEmail = isEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value);
 
@@ -387,7 +446,7 @@
                         isValid = false;
                         errorEl.textContent = isInvalidEmail ? 'Please enter a valid email address.' : `Please enter your ${id}.`;
                         errorEl.classList.remove('hidden');
-                         input.classList.add('border-red-500');
+                        input.classList.add('border-red-500');
                     } else {
                         errorEl.classList.add('hidden');
                         input.classList.remove('border-red-500');
@@ -403,7 +462,7 @@
                 const name = document.getElementById('name').value.trim();
                 const email = document.getElementById('email').value.trim();
                 const message = document.getElementById('message').value.trim();
-                const ownerPhoneNumber = '918197174493'; // Replace with actual number
+                const ownerPhoneNumber = '918660110355'; // ! TODO: Replace with actual number
                 
                 const whatsappMessage = `*New Paid Promotion Request* from Gadag Info Website:\n\n*Name/Brand:* ${name}\n*Contact Email:* ${email}\n\n*Message:*\n${message}`;
                 const whatsappURL = `https://wa.me/${ownerPhoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
@@ -414,9 +473,21 @@
                 feedbackEl.classList.add('text-green-500');
                 form.reset();
             });
+
+            // --- Scroll to Top Button Logic ---
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            window.onscroll = function() {
+                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                    scrollToTopBtn.classList.remove('hidden');
+                } else {
+                    scrollToTopBtn.classList.add('hidden');
+                }
+            };
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
         });
     </script>
 </body>
 </html>
-
 
